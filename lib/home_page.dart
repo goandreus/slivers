@@ -13,13 +13,41 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: Colors.black,
+        color: Colors.black54,
         child: CustomScrollView(
           slivers: [
             SliverSafeArea(
               bottom: false,
-              sliver: SliverList(delegate: SliverChildListDelegate(
+              sliver: SliverGrid.count(crossAxisCount: 3, 
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              children: [
+                Container(
+                  color: Colors.red
+                ),
+                Container(
+                  color: Colors.red
+                ),
+                Container(
+                  color: Colors.red
+                ),
+                Container(
+                  color: Colors.red
+                ),
+                Container(
+                  color: Colors.red
+                ),
+                Container(
+                  color: Colors.red
+                ),
+              ],
+              ),
+            ),
+
+            
+             SliverList(delegate: SliverChildListDelegate(
                 [
+                  SizedBox(height:10),
                   Container(
                     height: 100,
                     color: Colors.red,
@@ -39,7 +67,17 @@ class _HomePageState extends State<HomePage> {
                 ]
               ),
               ),
-            ),
+              SliverGrid(delegate: SliverChildBuilderDelegate((_, index){
+                return Container(
+                  color: Colors.purple
+                );
+              },childCount: 50), gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 50,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                childAspectRatio: 16/8
+              )),
+            
             SliverToBoxAdapter(
               child: Container(
                 height: 200,
