@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slivers/sliver_appbar_page.dart';
 import 'home_page.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: SliverAppBarPage(),
     );
   }
 }
